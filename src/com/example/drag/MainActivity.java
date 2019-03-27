@@ -21,8 +21,7 @@ private int yDelta;
     setContentView(R.layout.activity_main);
     mViewGroup = (ViewGroup) findViewById(R.id.root);
     mButton = (Button) findViewById(R.id.id_text);
-    RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
-        ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+    RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     layoutParams.leftMargin = 50;
     layoutParams.topMargin = 50;
 
@@ -36,14 +35,12 @@ private int yDelta;
     final int y = (int) event.getRawY();
     switch (event.getAction() & MotionEvent.ACTION_MASK) {
       case MotionEvent.ACTION_DOWN:
-        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view
-            .getLayoutParams();
+        RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) view.getLayoutParams();
         xDelta = x - params.leftMargin;
         yDelta = y - params.topMargin;
         break;
       case MotionEvent.ACTION_MOVE:
-        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) view
-            .getLayoutParams();
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) view.getLayoutParams();
         int xDistance = x - xDelta;
         int yDistance = y - yDelta;
         layoutParams.leftMargin = xDistance;
